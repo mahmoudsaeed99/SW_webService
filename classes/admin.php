@@ -5,6 +5,7 @@
  //include '../register/register.php';
     
  class Admin extends User {
+     
 
  }
 

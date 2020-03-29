@@ -1,6 +1,6 @@
 <?php
 
-    include 'autoloader.php';
+    // include 'autoloader.php';
     
     abstract class Register {
 

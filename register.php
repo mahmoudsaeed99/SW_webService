@@ -1,6 +1,6 @@
 <?php
 
-    include '../users/user.php';
+ //   include '../users/user.php';
 
     abstract class Register {
 

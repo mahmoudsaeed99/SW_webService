@@ -1,9 +1,11 @@
 <?php
 
-    class AdminQuery extends doQuery{
+    class AdminQuery implements doQuery{
         
-        public function selectAll($conn , $tableName){
-                echo "admin <br>";
+        public function selectAll($conn){
+            $query = "SELECT `firstname`, `id`, `lastname`, `email`, `password` FROM `admins` WHERE 1";
+            $result = mysqli_query($conn, $query);
+            return $result;    
         }
     }
 

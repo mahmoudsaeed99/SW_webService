@@ -6,7 +6,7 @@
 
         public function registration(User $user){
             echo "normal <br>";
-            echo $user->name."<br>";
+            echo $user->firstname."<br>";
         }
 
     }

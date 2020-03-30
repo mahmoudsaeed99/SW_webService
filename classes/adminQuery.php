@@ -13,6 +13,12 @@
             $result = mysqli_query($conn, $query);
             return $result; 
         }
+        public function selectToLogin($conn , $email , $pass){
+            $query = "SELECT `firstname`, `id`, `lastname`, `email`, `password` FROM `admins` WHERE `email`='$email' AND `password` = '$pass' ";
+            $result = mysqli_query($conn, $query);
+            return $result;    
+        }
+
     }
 
 ?>

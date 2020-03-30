@@ -30,8 +30,12 @@ function reg(Register $register , User $user){
  $db = new DB();
  $conn = $db->getConnect();
 $adminquery = new AdminQuery();
-$adminquery->insert($conn ,$user);
-$result = $adminquery->selectAll($conn);
+$result = $adminquery->selectToLogin($conn ,"mahmoudsaeed","mmmm");
+// $result = $adminquery->selectAll($conn);
+while($row = mysqli_fetch_assoc($result)){
+    echo $row['firstname']."  ".$row['lastname']."  ".$row['email'];
+    echo "<br>";
+}
 $db->closeConnect();
  $user = new ShopOwner("mahmoud" , "saeed","" , "mahmoudsaeed");
  $register = new ShopRegister();

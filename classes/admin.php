@@ -11,6 +11,8 @@
         // parent::__construct($name , $pass , $email);
         $this->firstname = $firstname;
         $this->lastname = $lastname;
+        $this->pass = $pass;
+        $this->email = $email;
 
  }
 

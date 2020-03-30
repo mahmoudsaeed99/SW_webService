@@ -6,7 +6,6 @@
 
         abstract function registration(User $user);
             
-
     }
 
 

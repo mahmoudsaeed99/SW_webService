@@ -2,19 +2,20 @@
 
     abstract class User{
             
-          public $name;
+          public $firstName;
+          public $lastName;
           public $pass;
           public $email;
+          
            
-          public function __contruct($name , $pass , $email){
-                // $super();
-                $this->name = $name;
-                $this->pass = $pass;
-                $this->email = $email;
+      //     public function __contruct($name , $pass , $email){
+      //           // $super();
+      //           $this->name = $name;
+      //           $this->pass = $pass;
+      //           $this->email = $email;
 
-          }
-          
-          
+      //     }
+    
     }
 
 

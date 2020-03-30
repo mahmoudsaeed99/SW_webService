@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
     interface DoQuery{
@@ -7,7 +8,3 @@
         // public function update($conn , $tableName , $query);
         // public function insert($conn , $tableName , $query);
     }
-
-
-
-?>

@@ -6,15 +6,14 @@
     
  class Admin extends User {
 
-    public function __construct($name , $pass , $email){
+    public function __construct($firstname , $lastname , $pass , $email){
         
         // parent::__construct($name , $pass , $email);
-        $this->name = $name;
-        $this->pass = $pass;
-        $this->email = $email;
-    }
-    
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
 
  }
+
+}
 
 ?>

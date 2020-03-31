@@ -1,10 +1,13 @@
 <?php
 
-    abstract class User{
+    class User{
+        public $id;
         public $username;
         public $email;
         public $pass;
         public $type;
+
+
 
     }
 
@@ -27,6 +30,7 @@
         public function selectBy($username , $pass){
             $query = $loginSelect."username = '$username' AND password = '$pass'";
             $result = mysqli_query($this->conn, $query);
+
             return $result;  
         }
         public function insert(User $user){
@@ -43,29 +47,53 @@
             }
         }
     }
-    class Registration extends User{
-        
-        public $usermodel = new UserModel();
-        
-        public function __construct($username , $email , $pass  , $type){
-            $this->username = $username;
-            $this->email = $email;
-            $this->pass = $pass;
-            $this->type = $type;
+    class Registration{
+
+        public $user;
+        public $userModel;
+
+        public function __construct($user){
+            $this->user = new User();
+            $this->userModel = new UserModel();
+            $this->user = $user;
         }
 
+        public function makeRegister(){
+            
+                $userModel->insert($this->user);
+            
+        }   
 
 
 
     }
-    class LogIn extends User{
-        
-        public function __construct($username , $email , $pass  , $type){
-            $this->username = $username;
-            $this->email = $email;
-            $this->pass = $pass;
-            $this->type = $type;
+    class LogIn {
+
+        public $user;
+        public $userModel;
+
+        public function __construct($user)
+        {
+            $this->userModel = new UserModel();
+            $this->user = $user;  
         }
+
+
+        public function makeLogin(){
+
+                if(isset($this->user->email) && isset($this->user->pass)){
+                    $userModel->selectBy($this->user->email , $this->user->pass);
+
+                } 
+                else if(isset($this->user->username) && isset($this->user->pass)){
+                    $userModel->selectBy($this->user->username , $this->user->pass);
+
+                }
+
+
+        }
+
+
 
     }
 

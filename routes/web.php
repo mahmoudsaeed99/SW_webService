@@ -26,7 +26,8 @@ Route::get('/', function () {
 Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
 Route::get('/login/{username}//{pass}','LoginController@loginByName');
 
-
+Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
+Route::get('/getRegisters','RegisterController@getRegisters');
 
 
 

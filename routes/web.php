@@ -18,7 +18,18 @@ Route::get('/', function () {
 });
 
 
-Route::get('/books','BookController@index');
-Route::get('/books/show/{id}','BookController@show');
-Route::get('/books/create','BookController@create');
-Route::post('/books/store','BookController@store');
+// Route::get('/books','BookController@index');
+// Route::get('/books/show/{id}','BookController@show');
+// Route::get('/books/create','BookController@create');
+
+
+Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
+Route::get('/login/{username}//{pass}','LoginController@loginByName');
+
+
+
+
+
+
+
+

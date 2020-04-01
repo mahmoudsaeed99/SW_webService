@@ -32,6 +32,7 @@ class getAccessController extends Controller
     function getRegisters(){
         $users  = users::get();
         $users = $users->toJson();
+        // dd('users');
         return view('getRegister',compact('users'));
 
     }

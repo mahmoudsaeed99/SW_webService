@@ -24,7 +24,7 @@ class getAccessController extends Controller
             ['pass', '=', $pass],
             ])->firstorfail();
             
-            // dd('user');
+            dd('user');
             $user = $user->toJson();
             return view('login',compact('user'));
     }

@@ -23,11 +23,11 @@ Route::get('/', function () {
 // Route::get('/books/create','BookController@create');
 
 
-Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
-Route::get('/login/{username}//{pass}','LoginController@loginByName');
+Route::get('/login//{email}/{pass}','getAccessController@loginByEmail');
+Route::get('/login/{username}//{pass}','getAccessController@loginByName');
 
 Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
-Route::get('/getRegisters','RegisterController@getRegisters');
+Route::get('/getRegisters','getAccessController@getRegisters');
 
 
 

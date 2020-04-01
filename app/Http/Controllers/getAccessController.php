@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\users;
 
-class LoginController extends Controller
+class getAccessController extends Controller
 {
     //
     function loginByEmail($email , $pass){
@@ -15,6 +15,7 @@ class LoginController extends Controller
             ])->firstorfail();
             
             // dd('user');
+            $user = $user->toJson();
             return view('login',compact('user'));
     }
     function loginByName($username , $pass){
@@ -24,6 +25,14 @@ class LoginController extends Controller
             ])->firstorfail();
             
             // dd('user');
+            $user = $user->toJson();
             return view('login',compact('user'));
+    }
+
+    function getRegisters(){
+        $users  = users::get();
+        $users = $users->toJson();
+        return view('getRegister',compact('users'));
+
     }
 }

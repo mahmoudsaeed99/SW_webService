@@ -11,6 +11,7 @@ class RegisterController extends Controller
     //
     function register($type , $username , $email , $password){
         $valid = new ValidationController();
+
         $bool = $valid->va($username , $email , $type , $password);
         if($bool == true){
             $user = new users();
@@ -25,10 +26,7 @@ class RegisterController extends Controller
 
         
     }
-    function getRegisters(){
-        $users  = users::get();
-        return view('getRegister',compact('users'));
 
-    }
+    
     
 }

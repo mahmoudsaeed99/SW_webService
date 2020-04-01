@@ -26,7 +26,7 @@ class ValidationController extends Controller
         }
         else{
 
-            return redirect('/');
+            return true;
 
         }   
 

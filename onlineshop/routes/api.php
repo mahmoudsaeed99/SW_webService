@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::get('/login//{email}/{pass}','getAccessController@loginByEmail');
+Route::get('/login/{username}//{pass}','getAccessController@loginByName');
 
-
-
-
-
+Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
+Route::get('/getRegisters','getAccessController@getRegisters');

@@ -9,6 +9,7 @@ use App\users;
 class RegisterController extends Controller
 {
 
+    //validation method 
     function validate($type , $username , $email ,$pass){
         $v=[
             'type' => $type,
@@ -32,26 +33,31 @@ class RegisterController extends Controller
             return true;
         }
     }
-    
-        function register($type , $username , $email ,$pass){
-           
-           
-
-               if(validate($type , $username , $email ,$pass)){ 
-                $user = new users();
+    // this method used to save data in the db
+    function saveData($type , $username , $email ,$pass){
+        $user = new users();
                 $user->username = $username;
                 $user->email = $email;
                 $user->type = $type;
                 $user->pass = $pass;
                 $user->save();
-                echo"tmam";
+
+    }
+        function register($type , $username , $email ,$pass){
+           
+        
+               if(validate($type , $username , $email ,$pass)){ 
+
+                  saveData($type , $username , $email ,$pass);
+
+                
                }
                else{
-                   echo "false";
+                   echo "error";
                }
-//} 
 
-            // dd($request->all());
+              
+
         }
 
         public function getRegisters(){

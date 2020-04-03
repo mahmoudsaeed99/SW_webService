@@ -23,11 +23,6 @@ Route::get('/', function () {
 // Route::get('/books/create','BookController@create');
 
 
-Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
-Route::get('/login/{username}//{pass}','LoginController@loginByName');
-
-
-
 
 
 

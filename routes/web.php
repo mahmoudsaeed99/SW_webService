@@ -17,20 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/login//{email}/{pass}','getAccessController@loginByEmail');
+// Route::get('/login/{username}//{pass}','getAccessController@loginByName');
 
-// Route::get('/books','BookController@index');
-// Route::get('/books/show/{id}','BookController@show');
-// Route::get('/books/create','BookController@create');
-
-
-Route::get('/login//{email}/{pass}','getAccessController@loginByEmail');
-Route::get('/login/{username}//{pass}','getAccessController@loginByName');
-
-Route::get('/   /{type}/{username}/{email}/{pass}','RegisterController@register');
-Route::get('/getRegisters','getAccessController@getRegisters');
-
-
-
-
-
-
+// Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
+// Route::get('/getRegisters','getAccessController@getRegisters');

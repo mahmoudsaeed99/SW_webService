@@ -18,6 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
+
+Route::get('/getRegisters','RegisterController@getRegisters');
+Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
+=======
 Route::get('/', function () {
     return view('welcome');
 });

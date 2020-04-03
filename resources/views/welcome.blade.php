@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <!-- <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    mahmoud
+                    Laravel
                 </div>
 
                 <div class="links">
@@ -96,10 +96,15 @@
                 </div>
             </div>
         </div>
-        @if($errors->any())
-          @foreach($errors->all() as $error)
-        	<div class="alert alert-danger">{{$error}}<div>
-          @endforeach		
-        @endif
+        <div>
+
+        </div> -->
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    {{$error}}
+                @endforeach
+                
+            @endif
+        
     </body>
 </html>

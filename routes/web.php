@@ -18,13 +18,5 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/books','BookController@index');
-// Route::get('/books/show/{id}','BookController@show');
-// Route::get('/books/create','BookController@create');
 
-
-
-
-
-
-
+  

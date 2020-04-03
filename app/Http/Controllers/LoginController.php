@@ -8,22 +8,25 @@ use App\users;
 class LoginController extends Controller
 {
     //
-    function loginByEmail($email , $pass){
+    public function loginByEmail($email , $pass){
         $user = users::where([
             ['email', '=', $email],
             ['pass', '=', $pass],
             ])->firstorfail();
             
             // dd('user');
-            return view('login',compact('user'));
+            // $user = $user->toJson();
+            return ($user);
     }
-    function loginByName($username , $pass){
+    public function loginByName($username , $pass){
         $user = users::where([
             ['username', '=', $username],
             ['pass', '=', $pass],
             ])->firstorfail();
             
             // dd('user');
-            return view('login',compact('user'));
+            // $user = $user->toJson();
+            return ($user);
     }
+    
 }

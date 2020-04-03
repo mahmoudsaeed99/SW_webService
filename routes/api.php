@@ -19,11 +19,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
-Route::get('/login/{username}//{pass}','LoginController@loginByName');
 
 
 Route::get('/getRegisters','RegisterController@getRegisters');
 Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+
+Route::get('/login/{username}//{pass}','LoginController@loginByName');
+
+Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
 
 

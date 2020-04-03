@@ -8,7 +8,6 @@ use App\users;
 
 class RegisterController extends Controller
 {
-            // $valid = new ValidationController();
 
     function validate($type , $username , $email ,$pass){
         $v=[

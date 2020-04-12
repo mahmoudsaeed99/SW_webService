@@ -3,7 +3,7 @@
    namespace App\Classes;    
     
    interface Proxy{
-        public function serverSite($url);
+        public function blockSite($url);
     }
    
 

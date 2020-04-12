@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\Mahmoud;
-
-use App\Classes\mmmm;
 
 use Illuminate\Http\Request;
 
@@ -28,6 +25,8 @@ class LoginController extends Controller
             
             // dd('user');
             // $user = $user->toJson();
+            session_start();
+            $_SESSION['login'] = $user->type;
             return ($user);
     }
     public function loginByName($username , $pass){
@@ -38,15 +37,11 @@ class LoginController extends Controller
             
             // dd('user');
             // $user = $user->toJson();
+            session_start();
+            $_SESSION['login'] = $user->type;
             return ($user);
     }
-    public function test(){
-        $list = array("facebook","twitter","instgram","youtube");
-        $test = new Mahmoud();
-        foreach($list as $arr){
-            echo $test->serverSite($arr);
-        }        
-    }
+    
 
     
 }

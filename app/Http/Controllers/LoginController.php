@@ -2,8 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Mahmoud;
+
+use App\Classes\mmmm;
+
 use Illuminate\Http\Request;
+
 use App\users;
+
+// class ProxyTest{
+
+//     function t(){
+//         echo'enter successfully';
+//     }
+// }
 
 class LoginController extends Controller
 {
@@ -28,5 +40,14 @@ class LoginController extends Controller
             // $user = $user->toJson();
             return ($user);
     }
+    public function test(){
+        $list = array("facebook","twitter","instgram","youtube");
+        $test = new Mahmoud();
+        foreach($list as $arr){
+            echo $test->serverSite($arr);
+        }        
+    }
+
     
 }
+

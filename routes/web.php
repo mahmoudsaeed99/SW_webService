@@ -18,8 +18,5 @@ Route::get('/', function () {
 });
 
 
- Route::get('/login','LoginController@test');
-// Route::get('/login/{username}//{pass}','getAccessController@loginByName');
 
-// Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
-// Route::get('/getRegisters','getAccessController@getRegisters');
+  

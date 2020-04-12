@@ -14,24 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
 
 
-Route::get('/getRegisters','RegisterController@getRegisters');
-Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
-=======
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/getRegisters','RegisterController@getRegisters');
+// Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
 
+// Route::get('/login/{username}//{pass}','LoginController@loginByName');
 
-
-Route::get('/login/{username}//{pass}','LoginController@loginByName');
-
-Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
+// Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
 
 

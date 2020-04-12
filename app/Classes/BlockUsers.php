@@ -13,8 +13,8 @@ class BlockUsers implements Proxy{
         if(in_array($type,$this->List)){
             return false;
         }
-        $mm = new AccessAdmin();
-        return  $mm->blockSite($type)."<br>";
+        $access = new AccessAdmin();
+        return  $access->blockSite($type)."<br>";
 
     }
 

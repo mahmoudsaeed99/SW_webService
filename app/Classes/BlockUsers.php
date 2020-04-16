@@ -7,7 +7,7 @@ use App\Classes\Proxy;
 use App\Classes\AccessAdmin;
 
 class BlockUsers implements Proxy{
-    private $List = array("normal","shopowner");
+    private $List = array("normal","ownershop");
 
     public function blockSite($type){
         if(in_array($type,$this->List)){

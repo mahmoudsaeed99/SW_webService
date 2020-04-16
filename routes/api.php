@@ -19,14 +19,17 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+// Route::get('/getRegisters',function(){
+
+// });
 
 
 Route::get('/getRegisters','RegisterController@getRegisters');
 Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
 
-Route::get('/login/{username}//{pass}','LoginController@loginByName');
+Route::get('/login/{logIn}/{pass}','LoginController@login');
 
-Route::get('/login//{email}/{pass}','LoginController@loginByEmail');
+
 
 // Route::get('/getRegisters','RegisterController@getRegisters');
 // Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');

@@ -8,7 +8,10 @@ use App\Classes\Proxy;
 class AccessAdmin implements Proxy{
 
     public function blockSite($type){
-        return  true;
+        if($type == "admin"){
+            return true;
+        }
+        return false;
     }
 }
 

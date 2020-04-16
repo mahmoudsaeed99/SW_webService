@@ -2,72 +2,54 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\BlockUsers;
+use App\Classes\validator;
+
+// use App\Classes\DB;
+
+
 use Illuminate\Http\Request;
 
-use App\users;
+use App\Users;
 
 class RegisterController extends Controller
 {
-
-    //validation method 
-    function validate($type , $username , $email ,$pass){
-        $v=[
-            'type' => $type,
-            'username' => $username,
-            'email' => $email,
-            'pass' => $pass
-        ];
-
-    
-        $validator = \Validator::make($v, [
-            'type' => 'required|min:4',
-            'username' => 'required|min:8',
-            'email' => 'required|min:8',
-            'pass' => 'required|min:8'
-        ]);
+    public function register($type , $username , $email ,$pass){
+        $validator = new Validator();
+        $user = new Users();
         
-        if ($validator->fails()) {
-            return false;
+       if($validator->valid($type , $username , $email ,$pass)){ 
+        $user->username = $username;
+        $user->email = $email;
+        $user->type = $type;
+        $user->pass = $pass;
+        $user->save();
+            
         }
+
         else{
-            return true;
+             echo "error";
         }
-    }
-    // this method used to save data in the db
-    function saveData($type , $username , $email ,$pass){
-        $user = new users();
-                $user->username = $username;
-                $user->email = $email;
-                $user->type = $type;
-                $user->pass = $pass;
-                $user->save();
 
     }
-        function register($type , $username , $email ,$pass){
-           
-        
-               if(validate($type , $username , $email ,$pass)){ 
 
-                  saveData($type , $username , $email ,$pass);
+    public function getRegisters(){
+            
+            $checkBlock = new BlockUsers();
+            session_start();
+            if(isset($_SESSION['login'])){
 
-                
-               }
-               else{
-                   echo "error";
-               }
-
-              
-
-        }
-
-        public function getRegisters(){
-            $users  = users::all();
-           
-            return ($users);
+                if($checkBlock->blockSite($_SESSION['login'])){
+                    $Users  = Users::all();
+                    echo $_SESSION['login'];
+                    return ($Users);
+                }
+                else{
+                    return ("this site is blocked for you");   
+                }
+            }
     
-        }
-    
-    
+    }
 }
 
 

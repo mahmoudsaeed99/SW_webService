@@ -4,9 +4,9 @@ namespace App\Classes;
 
 use App\Http\Controllers\RegisterController;
 
-use App\Classes\authentication;
+use App\Classes\Authentication;
 
-class authorization implements authentication{
+class Authorization implements Authentication{
 
     public function is_admin($function,$type){
         if($function=="getRegisters"){

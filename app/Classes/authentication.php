@@ -2,7 +2,7 @@
 
    namespace App\Classes;    
     
-   interface authentication{
+   interface Authentication{
         public function is_admin($function,$type);
     }
    

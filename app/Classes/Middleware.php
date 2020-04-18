@@ -2,11 +2,11 @@
 
 namespace App\Classes;
 
-use App\Classes\authentication;
+use App\Classes\Authentication;
 
-use App\Classes\authorization;
+use App\Classes\Authorization;
 
-class Middleware implements authentication{
+class Middleware implements Authentication{
     private $List = array("normal","ownershop");
 
     public function is_admin($function,$type){
@@ -14,7 +14,7 @@ class Middleware implements authentication{
             return '/error';
         }
 
-        $access = new authorization();
+        $access = new Authorization();
         return  $access->is_admin($function,$type)."<br>";
 
     }

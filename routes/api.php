@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Classes\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,18 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
+//'RegisterController@getRegisters'
+Route::get('/getRegisters',function(){
+    $checkBlock = new Middleware();
+    session_start();
+    if(isset($_SESSION['login'])){
+       return  $checkBlock->is_admin("getRegisters",$_SESSION['login']);            
+    }
+    else{
+        return ('/error');
+    }
+});
 
-Route::get('/getRegisters','RegisterController@getRegisters');
 Route::get('/register/{type}/{username}/{email}/{pass}','RegisterController@register');
 
 Route::get('/login/{logIn}/{pass}','LoginController@login');

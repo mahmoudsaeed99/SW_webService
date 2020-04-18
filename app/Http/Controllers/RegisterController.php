@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\BlockUsers;
 use App\Classes\validator;
 
 // use App\Classes\DB;
@@ -34,20 +33,8 @@ class RegisterController extends Controller
     }
 
     public function getRegisters(){
-            
-            $checkBlock = new BlockUsers();
-            session_start();
-            if(isset($_SESSION['login'])){
-
-                if($checkBlock->blockSite($_SESSION['login'])){
-                    $Users  = Users::all();
-                    echo $_SESSION['login'];
-                    return ($Users);
-                }
-                else{
-                    return ("this site is blocked for you");   
-                }
-            }
+        $Users  = Users::all();
+        return ($Users);
     
     }
 }

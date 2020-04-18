@@ -2,20 +2,20 @@
 
 namespace App\Classes;
 
-use App\Classes\authentication;
+use App\Classes\Authentication;
 
-use App\Classes\authorization;
+use App\Classes\Authorization;
 
-class Middleware implements authentication{
+class Middleware implements Authentication{
     private $List = array("normal","ownershop");
 
-    public function is_admin($function,$type){
+    public function getAllRegister($type){
         if(in_array($type,$this->List)){
             return '/error';
         }
 
-        $access = new authorization();
-        return  $access->is_admin($function,$type)."<br>";
+        $access = new Authorization();
+        return  $access->getAllRegister($type)."<br>";
 
     }
 

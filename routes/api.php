@@ -29,7 +29,7 @@ Route::get('/getRegisters',function(){
     $checkBlock = new Middleware();
     session_start();
     if(isset($_SESSION['login'])){
-       return  $checkBlock->is_admin("getRegisters",$_SESSION['login']);            
+       return  $checkBlock->getAllRegister($_SESSION['login']);            
     }
     else{
         return ('/error');

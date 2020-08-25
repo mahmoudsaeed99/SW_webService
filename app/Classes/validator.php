@@ -13,7 +13,7 @@ class Validator {
         ];
 
     
-        $validator = \Validator::make($v, [
+        $validator = \validator::make($v, [
             'type' => 'required|min:4|different:admin',
             'username' => 'required|min:8',
             'email' => 'required|min:8|unique:users|email',

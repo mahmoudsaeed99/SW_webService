@@ -28,13 +28,17 @@ class LoginController extends Controller
             $user = users::where([
                 ['username', '=', $logIn],
                 ['pass', '=', $pass],
-                ])->firstorfail();
+                ])->get();
                 
                 // dd('user');
                 // $user = $user->toJson();
                 session_start();
-                $_SESSION['login'] = $user->type;
-                return ($user);
+                if($user == []){
+                    return $user->toJson();
+                }
+                echo $user;
+                // $_SESSION['login'] = $user->type;
+                // return ($user);
             
         }
         else{
